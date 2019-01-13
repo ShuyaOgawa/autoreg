@@ -1,0 +1,188 @@
+<div class="main user-show">
+<div class="reg-form">
+  <div class="url">URL
+    <input name="url" type="text">
+    <input type="submit">
+  </div>
+
+      <table class="entryTb">
+			<tbody><tr>
+				<th colspan="2">プロフィール情報</th>
+			</tr>
+      <%= form_tag("/update") do %>
+      <tr id="input01">
+				<td id="th_name" class="td01">氏名</td><td><input name="name1" type="text" id="tbx_name1" class="inputMText" value="<%= @user.name1 %>">  <input name="name2" type="text" id="tbx_name2" class="inputMText" value="<%= @user.name2 %>"><p></p></td>
+			</tr><tr id="input02">
+				<td id="th_kana" class="td01">フリガナ</td><td><input name="kana1" type="text" id="tbx_kana1" class="inputMText" value="<%= @user.kana1 %>">  <input name="kana2" type="text" id="tbx_kana2" class="inputMText" value="<%= @user.kana2 %>"><p></p></td>
+			</tr><tr id="input05">
+				<td id="th_mail" class="td01">メインメールアドレス</td><td><input name="email" type="text" id="tbx_mail" class="inputL" value="<%= @user.email %>"></td>
+			</tr><tr id="input18">
+				<td id="th_keitai" class="td01">携帯番号</td><td><input name="keitai1" type="text" id="tbx_keitai1" class="inputSText" value="<%= @user.keitai1 %>">  -  <input name="keitai2" type="text" id="tbx_keitai2" class="inputSText" value="<%= @user.keitai2 %>">  -  <input name="keitai3" type="text" id="tbx_keitai3" class="inputSText" value="<%= @user.keitai3 %>"><p></p></td>
+			</tr><tr id="input03">
+				<td id="th_sex" class="td01">性別</td><td><input id="rbt_sex1" type="radio" name="sex" value="男"<% if @user.sex == "男"%> checked="checked"　<% end %>><label for="sex"> 男性   </label><input id="rbt_sex2" type="radio" name="sex" value="女"<% if @user.sex == "女"%> checked="checked"　<% end %>><label for="sex"> 女性  </label><p></p></td>
+			</tr><tr id="input04">
+				<td id="th_birth" class="td01">生年月日</td><td><select name="birthY" id="ddl_birthY" class="birth01">
+					<option selected="selected" value=""></option>
+					<option value="1985" <% if @user.birthY == "1985" %> selected="selected"　<% end %>>1985</option>
+					<option value="1986" <% if @user.birthY == "1986" %> selected="selected"　<% end %>>1986</option>
+					<option value="1987" <% if @user.birthY == "1987" %> selected="selected"　<% end %>>1987</option>
+					<option value="1988" <% if @user.birthY == "1988" %> selected="selected"　<% end %>>1988</option>
+					<option value="1989" <% if @user.birthY == "1989" %> selected="selected"　<% end %>>1989</option>
+					<option value="1990" <% if @user.birthY == "1990" %> selected="selected"　<% end %>>1990</option>
+					<option value="1991" <% if @user.birthY == "1991" %> selected="selected"　<% end %>>1991</option>
+					<option value="1992" <% if @user.birthY == "1992" %> selected="selected"　<% end %>>1992</option>
+					<option value="1993" <% if @user.birthY == "1993" %> selected="selected"　<% end %>>1993</option>
+					<option value="1994" <% if @user.birthY == "1994" %> selected="selected"　<% end %>>1994</option>
+					<option value="1995" <% if @user.birthY == "1995" %> selected="selected"　<% end %>>1995</option>
+					<option value="1996" <% if @user.birthY == "1996" %> selected="selected"　<% end %>>1996</option>
+					<option value="1997" <% if @user.birthY == "1997" %> selected="selected"　<% end %>>1997</option>
+					<option value="1998" <% if @user.birthY == "1998" %> selected="selected"　<% end %>>1998</option>
+					<option value="1999" <% if @user.birthY == "1999" %> selected="selected"　<% end %>>1999</option>
+					<option value="2000" <% if @user.birthY == "2000" %> selected="selected"　<% end %>>2000</option>
+					<option value="2001" <% if @user.birthY == "2001" %> selected="selected"　<% end %>>2001</option>
+					<option value="2002" <% if @user.birthY == "2002" %> selected="selected"　<% end %>>2002</option>
+					<option value="2003" <% if @user.birthY == "2003" %> selected="selected"　<% end %>>2003</option>
+					<option value="2004" <% if @user.birthY == "2004" %> selected="selected"　<% end %>>2004</option>
+					<option value="2005" <% if @user.birthY == "2005" %> selected="selected"　<% end %>>2005</option>
+					<option value="2006" <% if @user.birthY == "2006" %> selected="selected"　<% end %>>2006</option>
+					<option value="2007" <% if @user.birthY == "2007" %> selected="selected"　<% end %>>2007</option>
+					<option value="2008" <% if @user.birthY == "2008" %> selected="selected"　<% end %>>2008</option>
+					<option value="2009" <% if @user.birthY == "2009" %> selected="selected"　<% end %>>2009</option>
+					<option value="2010" <% if @user.birthY == "2010" %> selected="selected"　<% end %>>2010</option>
+					<option value="2011" <% if @user.birthY == "2011" %> selected="selected"　<% end %>>2011</option>
+					<option value="2012" <% if @user.birthY == "2012" %> selected="selected"　<% end %>>2012</option>
+					<option value="2013" <% if @user.birthY == "2013" %> selected="selected"　<% end %>>2013</option>
+					<option value="2014" <% if @user.birthY == "2014" %> selected="selected"　<% end %>>2014</option>
+					<option value="2015" <% if @user.birthY == "2015" %> selected="selected"　<% end %>>2015</option>
+					<option value="2016" <% if @user.birthY == "2016" %> selected="selected"　<% end %>>2016</option>
+					<option value="2017" <% if @user.birthY == "2017" %> selected="selected"　<% end %>>2017</option>
+					<option value="2018" <% if @user.birthY == "2018" %> selected="selected"　<% end %>>2018</option>
+				</select>  年  
+        <select name="birthM" id="ddl_birthM" >
+					<option selected="selected"></option>
+					<option value="1" <% if @user.birthM == "1" %> selected="selected"　<% end %>>1</option>
+					<option value="2" <% if @user.birthM == "2" %> selected="selected"　<% end %>>2</option>
+					<option value="3" <% if @user.birthM == "3" %> selected="selected"　<% end %>>3</option>
+					<option value="4" <% if @user.birthM == "4" %> selected="selected"　<% end %>>4</option>
+					<option value="5" <% if @user.birthM == "5" %> selected="selected"　<% end %>>5</option>
+					<option value="6" <% if @user.birthM == "6" %> selected="selected"　<% end %>>6</option>
+					<option value="7" <% if @user.birthM == "7" %> selected="selected"　<% end %>>7</option>
+					<option value="8" <% if @user.birthM == "8" %> selected="selected"　<% end %>>8</option>
+					<option value="9" <% if @user.birthM == "9" %> selected="selected"　<% end %>>9</option>
+					<option value="10" <% if @user.birthM == "10" %> selected="selected"　<% end %>>10</option>
+					<option value="11" <% if @user.birthM == "11" %> selected="selected"　<% end %>>11</option>
+					<option value="12" <% if @user.birthM == "12" %> selected="selected"　<% end %>>12</option>
+
+				</select>  月  <select name="birthD" id="ddl_birthD" >
+					<option selected="selected" value=""></option>
+					<option value="1" <% if @user.birthD == "1" %> selected="selected"　<% end %>>1</option>
+					<option value="2" <% if @user.birthD == "2" %> selected="selected"　<% end %>>2</option>
+					<option value="3" <% if @user.birthD == "3" %> selected="selected"　<% end %>>3</option>
+					<option value="4" <% if @user.birthD == "4" %> selected="selected"　<% end %>>4</option>
+					<option value="5" <% if @user.birthD == "5" %> selected="selected"　<% end %>>5</option>
+					<option value="6" <% if @user.birthD == "6" %> selected="selected"　<% end %>>6</option>
+					<option value="7" <% if @user.birthD == "7" %> selected="selected"　<% end %>>7</option>
+					<option value="8" <% if @user.birthD == "8" %> selected="selected"　<% end %>>8</option>
+					<option value="9" <% if @user.birthD == "9" %> selected="selected"　<% end %>>9</option>
+					<option value="10" <% if @user.birthD == "10" %> selected="selected"　<% end %>>10</option>
+					<option value="11" <% if @user.birthD == "11" %> selected="selected"　<% end %>>11</option>
+					<option value="12" <% if @user.birthD == "12" %> selected="selected"　<% end %>>12</option>
+					<option value="13" <% if @user.birthD == "13" %> selected="selected"　<% end %>>13</option>
+					<option value="14" <% if @user.birthD == "14" %> selected="selected"　<% end %>>14</option>
+					<option value="15" <% if @user.birthD == "15" %> selected="selected"　<% end %>>15</option>
+					<option value="16" <% if @user.birthD == "16" %> selected="selected"　<% end %>>16</option>
+					<option value="17" <% if @user.birthD == "17" %> selected="selected"　<% end %>>17</option>
+					<option value="18" <% if @user.birthD == "18" %> selected="selected"　<% end %>>18</option>
+					<option value="19" <% if @user.birthD == "19" %> selected="selected"　<% end %>>19</option>
+					<option value="20" <% if @user.birthD == "20" %> selected="selected"　<% end %>>20</option>
+					<option value="21" <% if @user.birthD == "21" %> selected="selected"　<% end %>>21</option>
+					<option value="22" <% if @user.birthD == "22" %> selected="selected"　<% end %>>22</option>
+					<option value="23" <% if @user.birthD == "23" %> selected="selected"　<% end %>>23</option>
+					<option value="24" <% if @user.birthD == "24" %> selected="selected"　<% end %>>24</option>
+					<option value="25" <% if @user.birthD == "25" %> selected="selected"　<% end %>>25</option>
+					<option value="26" <% if @user.birthD == "26" %> selected="selected"　<% end %>>26</option>
+					<option value="27" <% if @user.birthD == "27" %> selected="selected"　<% end %>>27</option>
+					<option value="28" <% if @user.birthD == "28" %> selected="selected"　<% end %>>28</option>
+					<option value="29" <% if @user.birthD == "29" %> selected="selected"　<% end %>>29</option>
+					<option value="30" <% if @user.birthD == "30" %> selected="selected"　<% end %>>30</option>
+					<option value="31" <% if @user.birthD == "31" %> selected="selected"　<% end %>>31</option>
+
+				</select>  日<p></p></td>
+			</tr>
+		</tbody></table>
+			<table class="entryTb">
+				<tbody><tr>
+					<th colspan="2">住所情報</th>
+				</tr><tr id="input07">
+					<td id="th_zip" class="td01">郵便番号</td><td><input name="postal1" type="text" maxlength="3" id="tbx_zip1" class="inputSText" value="<%= @user.postal1 %>" onkeyup="msbSetKAddress(this,'tbx_kzip1');" onkeypress="msbSetKAddress(this,'tbx_kzip1');" onblur="msbSetKAddress(this,'tbx_kzip1');">  -  <input name="postal2" type="text" maxlength="4" id="tbx_zip2" class="inputSText" value="<%= @user.postal1 %>"  onkeyup="msbSetKAddress(this,'tbx_kzip2');" onkeypress="msbSetKAddress(this,'tbx_kzip2');" onblur="msbSetKAddress(this,'tbx_kzip2');"> <p></p></td>
+				</tr><tr id="input08">
+					<td id="th_ken" class="td01">都道府県</td><td><select name="prefecture" id="ddl_ken"  onchange="msbSetKKen(this,'ddl_kken');">
+						<option selected="selected" value=""></option>
+						<option value="北海道" <% if @user.prefecture == "北海道" %> selected="selected"　<% end %>>北海道</option>
+						<option value="青森県" <% if @user.prefecture == "青森県" %> selected="selected"　<% end %>>青森県</option>
+						<option value="岩手県" <% if @user.prefecture == "岩手県" %> selected="selected"　<% end %>>岩手県</option>
+						<option value="秋田県" <% if @user.prefecture == "秋田県" %> selected="selected"　<% end %>>秋田県</option>
+						<option value="山形県" <% if @user.prefecture == "山形県" %> selected="selected"　<% end %>>山形県</option>
+						<option value="宮城県" <% if @user.prefecture == "宮城県" %> selected="selected"　<% end %>>宮城県</option>
+						<option value="福島県" <% if @user.prefecture == "福島県" %> selected="selected"　<% end %>>福島県</option>
+						<option value="茨城県" <% if @user.prefecture == "茨城県" %> selected="selected"　<% end %>>茨城県</option>
+						<option value="栃木県" <% if @user.prefecture == "栃木県" %> selected="selected"　<% end %>>栃木県</option>
+						<option value="群馬県" <% if @user.prefecture == "群馬県" %> selected="selected"　<% end %>>群馬県</option>
+						<option value="埼玉県" <% if @user.prefecture == "埼玉県" %> selected="selected"　<% end %>>埼玉県</option>
+						<option value="千葉県" <% if @user.prefecture == "千葉県" %> selected="selected"　<% end %>>千葉県</option>
+						<option value="東京都" <% if @user.prefecture == "東京都" %> selected="selected"　<% end %>>東京都</option>
+						<option value="神奈川県" <% if @user.prefecture == "神奈川県" %> selected="selected"　<% end %>>神奈川県</option>
+						<option value="山梨県" <% if @user.prefecture == "山梨県" %> selected="selected"　<% end %>>山梨県</option>
+						<option value="長野県" <% if @user.prefecture == "長野県" %> selected="selected"　<% end %>>長野県</option>
+						<option value="新潟県" <% if @user.prefecture == "新潟県" %> selected="selected"　<% end %>>新潟県</option>
+						<option value="富山県" <% if @user.prefecture == "富山県" %> selected="selected"　<% end %>>富山県</option>
+						<option value="石川県" <% if @user.prefecture == "石川県" %> selected="selected"　<% end %>>石川県</option>
+						<option value="福井県" <% if @user.prefecture == "福井県" %> selected="selected"　<% end %>>福井県</option>
+						<option value="岐阜県" <% if @user.prefecture == "岐阜県" %> selected="selected"　<% end %>>岐阜県</option>
+						<option value="静岡県" <% if @user.prefecture == "静岡県" %> selected="selected"　<% end %>>静岡県</option>
+						<option value="愛知県" <% if @user.prefecture == "愛知県" %> selected="selected"　<% end %>>愛知県</option>
+						<option value="三重県" <% if @user.prefecture == "三重県" %> selected="selected"　<% end %>>三重県</option>
+						<option value="滋賀県" <% if @user.prefecture == "滋賀県" %> selected="selected"　<% end %>>滋賀県</option>
+						<option value="京都府" <% if @user.prefecture == "京都府" %> selected="selected"　<% end %>>京都府</option>
+						<option value="大阪府" <% if @user.prefecture == "大阪府" %> selected="selected"　<% end %>>大阪府</option>
+						<option value="兵庫県" <% if @user.prefecture == "兵庫県" %> selected="selected"　<% end %>>兵庫県</option>
+						<option value="奈良県" <% if @user.prefecture == "奈良県" %> selected="selected"　<% end %>>奈良県</option>
+						<option value="鳥取県" <% if @user.prefecture == "鳥取県" %> selected="selected"　<% end %>>鳥取県</option>
+						<option value="和歌山県" <% if @user.prefecture == "和歌山県" %> selected="selected"　<% end %>>和歌山県</option>
+						<option value="島根県" <% if @user.prefecture == "島根県" %> selected="selected"　<% end %>>島根県</option>
+						<option value="岡山県" <% if @user.prefecture == "岡山県" %> selected="selected"　<% end %>>岡山県</option>
+						<option value="広島県" <% if @user.prefecture == "広島県" %> selected="selected"　<% end %>>広島県</option>
+						<option value="山口県" <% if @user.prefecture == "山口県" %> selected="selected"　<% end %>>山口県</option>
+						<option value="徳島県" <% if @user.prefecture == "徳島県" %> selected="selected"　<% end %>>徳島県</option>
+						<option value="香川県" <% if @user.prefecture == "香川県" %> selected="selected"　<% end %>>香川県</option>
+						<option value="愛媛県" <% if @user.prefecture == "愛媛県" %> selected="selected"　<% end %>>愛媛県</option>
+						<option value="高知県" <% if @user.prefecture == "高知県" %> selected="selected"　<% end %>>高知県</option>
+						<option value="福岡県" <% if @user.prefecture == "福岡県" %> selected="selected"　<% end %>>福岡県</option>
+						<option value="佐賀県" <% if @user.prefecture == "佐賀県" %> selected="selected"　<% end %>>佐賀県</option>
+						<option value="長崎県" <% if @user.prefecture == "長崎県" %> selected="selected"　<% end %>>長崎県</option>
+						<option value="熊本県" <% if @user.prefecture == "熊本県" %> selected="selected"　<% end %>>熊本県</option>
+						<option value="大分県" <% if @user.prefecture == "大分県" %> selected="selected"　<% end %>>大分県</option>
+						<option value="宮崎県" <% if @user.prefecture == "宮崎県" %> selected="selected"　<% end %>>宮崎県</option>
+						<option value="鹿児島県" <% if @user.prefecture == "鹿児島県" %> selected="selected"　<% end %>>鹿児島県</option>
+						<option value="沖縄県" <% if @user.prefecture == "沖縄県" %> selected="selected"　<% end %>>沖縄県</option>
+
+
+					</select><p></p></td>
+				</tr><tr id="input09">
+					<td id="th_addr1" class="td01">市区郡番地</td><td><input name="city" type="text" id="tbx_addr1" class="inputL" value="<%= @user.city %>" onkeyup="msbSetKAddress(this,'tbx_kaddr1');" onkeypress="msbSetKAddress(this,'tbx_kaddr1');" onblur="msbSetKAddress(this,'tbx_kaddr1');"><p>例）千代田区千代田1-2-3</p></td>
+				</tr><tr id="input10">
+					<td id="th_addr2" class="td01">マンション・アパート名</td><td><input name="apartment" type="text" id="tbx_addr2" class="inputL" value="<%= @user.apartment %>" onkeyup="msbSetKAddress(this,'tbx_kaddr2');" onkeypress="msbSetKAddress(this,'tbx_kaddr2');" onblur="msbSetKAddress(this,'tbx_kaddr2');"><p>例）日本アパート201号</p></td>
+				</tr>
+			</tbody>
+    </table>
+		</div>
+    <div class="update_button_div">
+    <input class="update_button" type="submit" value="プロフィール更新">
+    </div>
+    <% end %>
+
+
+	</div>
+
+</div>
+</div>

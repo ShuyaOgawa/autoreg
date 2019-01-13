@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Autoreg</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    <header>
+      <div class="header-logo">
+      <%= link_to("Autoreg", "/") %>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <%= form_tag("/") do %>
+            <input placeholder="Email" name="email" value="<%= @email %>">
+            <input placeholder="パスワード" type="password" name="password" value="<%= @password %>">
+            <input type="submit" value="ログイン">
+          <% end %>
+          <% if @error_message %>
+            <div name="login-form-error">
+              <%= @error_message %>
+            </div>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to("新規登録", "/signup") %>
+        </li>
+      </ul>
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
