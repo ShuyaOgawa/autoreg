@@ -55,8 +55,8 @@ class UserController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     @user.url = params[:url]
     if @user.save
-      
-      driver = Selenium::WebDriver.for :chrome
+
+      driver = Selenium::WebDriver.for :chrome, options: headless_chrome_options
       #driver.navigate.to "https://www.e2r.jp/ja/dena2020/hs_agree.html"
       #driver.navigate.to "https://www.cyberagent.co.jp/careers/students/tech/"
       #driver.navigate.to "https://mypage.fjsquare.jp/ja/fujitsu2019/fsquare_kiyaku.html"
@@ -432,7 +432,12 @@ class UserController < ApplicationController
 
   end
 
-
+  def headless_chrome_options
+      options = Selenium::WebDriver::Chrome::Options.new
+      options.add_argument('--no-sandbox')
+      options.add_argument('--disable-gpu')
+      options
+  end
 
 
 
