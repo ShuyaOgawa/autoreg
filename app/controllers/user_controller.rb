@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+  before_action :authenticate_user, {only: [:show]}
 
   def show
     @user = User.find_by(id: session[:user_id])
@@ -6,8 +7,6 @@ class UserController < ApplicationController
 
   def logout
     session[:user_id] = nil
-    p "aaaaaaaaaaa"
-    p session[:user_id]
     redirect_to("/")
   end
 
