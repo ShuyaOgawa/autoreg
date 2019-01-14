@@ -55,7 +55,7 @@ class UserController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     @user.url = params[:url]
     if @user.save
-      require 'selenium-webdriver'
+      
       driver = Selenium::WebDriver.for :chrome
       #driver.navigate.to "https://www.e2r.jp/ja/dena2020/hs_agree.html"
       #driver.navigate.to "https://www.cyberagent.co.jp/careers/students/tech/"
