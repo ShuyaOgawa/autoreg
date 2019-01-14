@@ -49,9 +49,6 @@ class UserController < ApplicationController
     redirect_to("/user/show")
   end
 
-  def index
-    @user = User.all
-  end
 
   def url
     @user = User.find_by(id: session[:user_id])

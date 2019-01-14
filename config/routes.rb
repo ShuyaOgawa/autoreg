@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   post "user/url" => "user#url"
   post "logout" => "user#logout"
   post "user/create" => "user#create"
-  get "user/index" => "user#index"
   get "signup" => "user#new"
   post "update" => "user#update"
   post "/" => "home#login"
