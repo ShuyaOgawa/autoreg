@@ -1,9 +1,13 @@
 <div class="main user-show">
 <div class="reg-form">
-  <div class="url">URL
-    <input name="url" type="text">
-    <input type="submit">
-  </div>
+  <%= form_tag("/user/url") do %>
+    <div class="url">URL
+      <input class="inputUrl" name="url" type="text">
+      <input type="submit"　value="自動登録">
+    </div>
+    <br></br>
+  <% end %>
+
 
       <table class="entryTb">
 			<tbody><tr>

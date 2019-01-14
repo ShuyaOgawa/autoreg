@@ -15,21 +15,30 @@
       <%= link_to("Autoreg", "/") %>
       </div>
       <ul class="header-menus">
-        <li>
-          <%= form_tag("/") do %>
-            <input placeholder="Email" name="email" value="<%= @email %>">
-            <input placeholder="パスワード" type="password" name="password" value="<%= @password %>">
-            <input type="submit" value="ログイン">
-          <% end %>
-          <% if @error_message %>
-            <div name="login-form-error">
-              <%= @error_message %>
-            </div>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to("新規登録", "/signup") %>
-        </li>
+        <% if @current_user == nil %>
+          <li>
+            <%= form_tag("/") do %>
+              <input placeholder="Email" name="email" value="<%= @email %>">
+              <input placeholder="パスワード" type="password" name="password" value="<%= @password %>">
+              <input type="submit" value="ログイン">
+            <% end %>
+            <% if @error_message %>
+              <div name="login-form-error">
+                <%= @error_message %>
+              </div>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to("新規登録", "/signup") %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to("自動登録をする", "/user/show") %>
+          </li>
+          <li>
+            <%= link_to("ログアウト", "/logout", {method: :post}) %>
+          </li>
+        <% end %>
       </ul>
     </header>
 
