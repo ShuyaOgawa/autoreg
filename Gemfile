@@ -65,5 +65,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'selenium-webdriver'
+gem 'chromedriver-helper'
 
 gem "bcrypt"
