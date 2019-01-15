@@ -56,14 +56,18 @@ class UserController < ApplicationController
     @user.url = params[:url]
     if @user.save
 
-      driver = Selenium::WebDriver.for :chrome, options: headless_chrome_options
+      require 'selenium-webdriver'
+
+      caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome", args: ["--headless"]})
+      driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
+      # driver = Selenium::WebDriver.for :chrome
       #driver.navigate.to "https://www.e2r.jp/ja/dena2020/hs_agree.html"
       #driver.navigate.to "https://www.cyberagent.co.jp/careers/students/tech/"
       #driver.navigate.to "https://mypage.fjsquare.jp/ja/fujitsu2019/fsquare_kiyaku.html"
       #driver.navigate.to "https://www.saiyo-dr.jp/yahoo/Entry/kiyaku.do"
 
       #driver.navigate.to "http://localhost:3000/user/show"
-
+      p "bbbbbbbbbb"
       driver.navigate.to @user.url
       url = @user.url
 
@@ -432,12 +436,7 @@ class UserController < ApplicationController
 
   end
 
-  def headless_chrome_options
-      options = Selenium::WebDriver::Chrome::Options.new
-      options.add_argument('--no-sandbox')
-      options.add_argument('--disable-gpu')
-      options
-  end
+
 
 
 
