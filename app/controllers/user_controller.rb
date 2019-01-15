@@ -58,8 +58,16 @@ class UserController < ApplicationController
 
       require 'selenium-webdriver'
 
-      caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome"})
-      driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
+      # caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome"})
+      # driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
+
+      from selenium.webdriver.chrome.options import Options
+      options = Options()
+      # Heroku以外ではNone
+      if chrome_binary_path
+        options.binary_location = chrome_binary_path
+      end
+      driver = Chrome(executable_path=driver_path, chrome_options=options)
       # driver = Selenium::WebDriver.for :chrome
       #driver.navigate.to "https://www.e2r.jp/ja/dena2020/hs_agree.html"
       #driver.navigate.to "https://www.cyberagent.co.jp/careers/students/tech/"
@@ -390,7 +398,6 @@ class UserController < ApplicationController
         end
         }
       end
-      p prefecture_name_array
       #セレクトタイプ入力
       if prefecture_name_array&.length == 1
         select = Selenium::WebDriver::Support::Select.new(driver.find_element(:name, prefecture_name_array[0]))
