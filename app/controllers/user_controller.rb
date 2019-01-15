@@ -58,7 +58,7 @@ class UserController < ApplicationController
 
       require 'selenium-webdriver'
 
-      caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome", args: ["--headless"]})
+      caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome"})
       driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
       # driver = Selenium::WebDriver.for :chrome
       #driver.navigate.to "https://www.e2r.jp/ja/dena2020/hs_agree.html"
