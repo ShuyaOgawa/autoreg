@@ -52,6 +52,7 @@ class UserController < ApplicationController
 
   def url
     require 'selenium-webdriver'
+    require 'selenium/webdriver/remote/http/curb'
     @user = User.find_by(id: session[:user_id])
     @user.url = params[:url]
     if @user.save
