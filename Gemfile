@@ -70,3 +70,5 @@ gem 'chromedriver-helper'
 
 
 gem "bcrypt"
+
+gem "curb"
