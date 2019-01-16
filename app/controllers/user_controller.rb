@@ -57,17 +57,10 @@ class UserController < ApplicationController
     if @user.save
 
       require 'selenium-webdriver'
+      caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome"})
+      driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
 
-      # caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome"})
-      # driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
 
-      from selenium.webdriver.chrome.options import Options
-      options = Options()
-      # Heroku以外ではNone
-      if chrome_binary_path
-        options.binary_location = chrome_binary_path
-      end
-      driver = Chrome(executable_path=driver_path, chrome_options=options)
       # driver = Selenium::WebDriver.for :chrome
       #driver.navigate.to "https://www.e2r.jp/ja/dena2020/hs_agree.html"
       #driver.navigate.to "https://www.cyberagent.co.jp/careers/students/tech/"
