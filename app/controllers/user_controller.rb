@@ -57,8 +57,12 @@ class UserController < ApplicationController
     if @user.save
 
       require 'selenium-webdriver'
+      # caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome"})
+      # driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
+
       caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome"})
-      driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
+      client = Selenium::WebDriver::Remote::Http::Curb.new
+      driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps, http_client: client
 
 
       # driver = Selenium::WebDriver.for :chrome
