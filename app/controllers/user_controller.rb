@@ -66,7 +66,7 @@ class UserController < ApplicationController
       # driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps, http_client: client
       # driver = Selenium::WebDriver.for :remote, :url => "http://127.0.0.1:5555/wd/hub", :desired_capabilities => :firefox
 
-      driver = Selenium::WebDriver.for :remote, :url => "http://127.0.0.1:5555/wd/hub", :desired_capabilities => :firefox
+      driver = Selenium::WebDriver.for :remote, :url => "http://localhost", :desired_capabilities => :firefox
 
       # driver = Selenium::WebDriver.for :chrome
       #driver.navigate.to "https://www.e2r.jp/ja/dena2020/hs_agree.html"
