@@ -58,15 +58,15 @@ class UserController < ApplicationController
     if @user.save
 
       require 'selenium-webdriver'
-      caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome"})
-      driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
+      # caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome"})
+      # driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps
 
       # caps = Selenium::WebDriver::Remote::Capabilities.chrome("chromeOptions" => {binary: "/app/.apt/usr/bin/google-chrome"})
       # client = Selenium::WebDriver::Remote::Http::Curb.new
       # driver = Selenium::WebDriver.for :chrome, desired_capabilities: caps, http_client: client
       # driver = Selenium::WebDriver.for :remote, :url => "http://127.0.0.1:5555/wd/hub", :desired_capabilities => :firefox
 
-      #driver = Selenium::WebDriver.for :remote, desired_capabilities: :chrome, , :url => "http://127.0.0.1:5555/wd/hub"
+      driver = Selenium::WebDriver.for :remote, :url => "http://127.0.0.1:5555/wd/hub", :desired_capabilities => :firefox
 
       # driver = Selenium::WebDriver.for :chrome
       #driver.navigate.to "https://www.e2r.jp/ja/dena2020/hs_agree.html"
